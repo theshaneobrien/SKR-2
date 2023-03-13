@@ -597,11 +597,11 @@
 #define COOLER_FAN_PIN -1
 
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50 //Shane Fans
-#define EXTRUDER_AUTO_FAN_SPEED 255   // Shane 255 == full speed
+#define EXTRUDER_AUTO_FAN_SPEED 120   // Shane 255 == full speed
 #define CHAMBER_AUTO_FAN_TEMPERATURE 30
-#define CHAMBER_AUTO_FAN_SPEED 255
+#define CHAMBER_AUTO_FAN_SPEED 120 //Shane Fans
 #define COOLER_AUTO_FAN_TEMPERATURE 18
-#define COOLER_AUTO_FAN_SPEED 255
+#define COOLER_AUTO_FAN_SPEED 120 //Shane Fans
 
 /**
  * Part-Cooling Fan Multiplexer
@@ -2965,8 +2965,8 @@
     #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
     #define Y_STALL_SENSITIVITY  8
     #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
-    //#define Z_STALL_SENSITIVITY  8
-    //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
+    #define Z_STALL_SENSITIVITY  8
+    #define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
     //#define Z3_STALL_SENSITIVITY Z_STALL_SENSITIVITY
     //#define Z4_STALL_SENSITIVITY Z_STALL_SENSITIVITY
     //#define I_STALL_SENSITIVITY  8
@@ -3846,7 +3846,7 @@
  * Host Prompt Support enables Marlin to use the host for user prompts so
  * filament runout and other processes can be managed from the host side.
  */
-//#define HOST_ACTION_COMMANDS
+#define HOST_ACTION_COMMANDS
 #if ENABLED(HOST_ACTION_COMMANDS)
   //#define HOST_PAUSE_M76
   //#define HOST_PROMPT_SUPPORT

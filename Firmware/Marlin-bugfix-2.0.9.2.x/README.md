@@ -1,3 +1,12 @@
+# Shane Changes
+
+This has been used to rebuild a dead CR-10
+
+Open in VSCode with PlatformIO
+
+## Main Things to Remember
+Disabled Heatbed, halved hotend PID_Max
+
 # Marlin 3D Printer Firmware
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
