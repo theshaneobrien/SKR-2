@@ -597,11 +597,11 @@
 #define COOLER_FAN_PIN -1
 
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50 //Shane Fans
-#define EXTRUDER_AUTO_FAN_SPEED 120   // Shane 255 == full speed
+#define EXTRUDER_AUTO_FAN_SPEED 255   // Shane 255 == full speed
 #define CHAMBER_AUTO_FAN_TEMPERATURE 30
 #define CHAMBER_AUTO_FAN_SPEED 120 //Shane Fans
 #define COOLER_AUTO_FAN_TEMPERATURE 18
-#define COOLER_AUTO_FAN_SPEED 120 //Shane Fans
+#define COOLER_AUTO_FAN_SPEED 255 //Shane Fans
 
 /**
  * Part-Cooling Fan Multiplexer
@@ -1974,7 +1974,7 @@
  * Repeatedly attempt G29 leveling until it succeeds.
  * Stop after G29_MAX_RETRIES attempts.
  */
-#define G29_RETRY_AND_RECOVER // Shane
+//#define G29_RETRY_AND_RECOVER // Shane
 #if ENABLED(G29_RETRY_AND_RECOVER)
   #define G29_MAX_RETRIES 4
   #define G29_HALT_ON_FAILURE

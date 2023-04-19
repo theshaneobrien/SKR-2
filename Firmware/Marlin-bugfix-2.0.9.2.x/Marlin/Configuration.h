@@ -588,7 +588,7 @@
 // Comment the following line to disable PID and enable bang-bang.
 #define PIDTEMP //Shane
 #define PIDTEMPBED //Shane
-#define BANG_MAX 127     // Limits current to nozzle while in bang-bang mode; 255=full current // shane
+#define BANG_MAX 255     // Limits current to nozzle while in bang-bang mode; 255=full current // shane
 #define PID_MAX BANG_MAX // Limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #define PID_K1 0.95      // Smoothing factor within any PID loop
 
@@ -605,9 +605,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  5.85 //shane
-    #define DEFAULT_Ki   0.41 //shane
-    #define DEFAULT_Kd 20.93 //shane
+    #define DEFAULT_Kp  6.35 //shane
+    #define DEFAULT_Ki   0.44 //shane
+    #define DEFAULT_Kd 22.99 //shane
   #endif
 #endif // PIDTEMP
 
@@ -628,7 +628,7 @@
  * heater. If your configuration is significantly different than this and you don't understand
  * the issues involved, don't use bed PID until someone else verifies that your hardware works.
  */
-#define PIDTEMPBED
+//#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -638,7 +638,7 @@
  * When set to any value below 255, enables a form of PWM to the bed that acts like a divider
  * so don't use it unless you are OK with PWM on your bed. (See the comment on enabling PIDTEMPBED)
  */
-#define MAX_BED_POWER 120 // limits duty cycle to bed; 255=full current
+#define MAX_BED_POWER 255 // limits duty cycle to bed; 255=full current
 
 #if ENABLED(PIDTEMPBED)
   //#define MIN_BED_POWER 0
@@ -1037,7 +1037,7 @@
 //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN //Shane
 
 // Force the use of the probe for Z-axis homing
-//#define USE_PROBE_FOR_Z_HOMING
+#define USE_PROBE_FOR_Z_HOMING
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1054,7 +1054,7 @@
  *      - normally-closed switches to GND and D32.
  *      - normally-open switches to 5V and D32.
  */
-//#define Z_MIN_PROBE_PIN 32 // Pin 32 is the RAMPS default
+#define Z_MIN_PROBE_PIN PE4 // Pin 32 is the RAMPS default
 
 /**
  * Probe Type
@@ -1091,7 +1091,7 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-#define BLTOUCH //Shane
+//#define BLTOUCH //Shane
 
 /**
  * Touch-MI Probe by hotends.fr
@@ -1549,7 +1549,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-#define AUTO_BED_LEVELING_BILINEAR //Shane
+//#define AUTO_BED_LEVELING_BILINEAR //Shane
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
@@ -1558,7 +1558,7 @@
  * these options to restore the prior leveling state or to always enable
  * leveling immediately after G28.
  */
-#define RESTORE_LEVELING_AFTER_G28 //Shane
+//#define RESTORE_LEVELING_AFTER_G28 //Shane
 //#define ENABLE_LEVELING_AFTER_G28
 
 /**
@@ -1566,8 +1566,8 @@
  */
 #define PREHEAT_BEFORE_LEVELING
 #if ENABLED(PREHEAT_BEFORE_LEVELING)
-  #define LEVELING_NOZZLE_TEMP 120   // (°C) Only applies to E0 at this time
-  #define LEVELING_BED_TEMP     0 //shane
+  #define LEVELING_NOZZLE_TEMP 180 // (°C) Only applies to E0 at this time
+  #define LEVELING_BED_TEMP     50 //shane
 #endif
 
 /**
@@ -1616,7 +1616,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 4 //Shane
+  #define GRID_MAX_POINTS_X 5 //Shane
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
@@ -1750,7 +1750,7 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
-#define Z_SAFE_HOMING //Shane
+//#define Z_SAFE_HOMING //Shane
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing
