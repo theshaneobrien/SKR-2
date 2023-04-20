@@ -587,7 +587,7 @@
 
 // Comment the following line to disable PID and enable bang-bang.
 #define PIDTEMP //Shane
-#define PIDTEMPBED //Shane
+//#define PIDTEMPBED //Shane
 #define BANG_MAX 255     // Limits current to nozzle while in bang-bang mode; 255=full current // shane
 #define PID_MAX BANG_MAX // Limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #define PID_K1 0.95      // Smoothing factor within any PID loop
@@ -605,9 +605,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  6.35 //shane
-    #define DEFAULT_Ki   0.44 //shane
-    #define DEFAULT_Kd 22.99 //shane
+    #define DEFAULT_Kp  24.39 //shane
+    #define DEFAULT_Ki   4.55 //shane
+    #define DEFAULT_Kd 32.69 //shane
   #endif
 #endif // PIDTEMP
 
@@ -646,9 +646,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 10.00
-  #define DEFAULT_bedKi .023
-  #define DEFAULT_bedKd 305.4
+  #define DEFAULT_bedKp 252.11
+  #define DEFAULT_bedKi 42.59
+  #define DEFAULT_bedKd 995.0
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -931,7 +931,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 415 } //Shane
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 400 } //Shane
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1037,7 +1037,7 @@
 //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN //Shane
 
 // Force the use of the probe for Z-axis homing
-#define USE_PROBE_FOR_Z_HOMING
+//#define USE_PROBE_FOR_Z_HOMING //SHane
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1054,7 +1054,7 @@
  *      - normally-closed switches to GND and D32.
  *      - normally-open switches to 5V and D32.
  */
-#define Z_MIN_PROBE_PIN PE4 // Pin 32 is the RAMPS default
+//#define Z_MIN_PROBE_PIN PE4 // Pin 32 is the RAMPS default SHANE
 
 /**
  * Probe Type
@@ -1344,7 +1344,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR false
+#define INVERT_E0_DIR true //shane invert
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
